@@ -92,7 +92,7 @@ async function downloadPdf(){
     const date=new Date().toLocaleDateString("ru-RU").replaceAll(".","-");
     pdf.save("Моя_финансовая_стартовая_точка_"+date+".pdf");
     status.textContent="PDF скачан на устройство.";
-  }catch(error){console.error(error);status.textContent="Не удалось создать PDF. Обновите страницу и попробуйте ещё раз.";}
+  }catch(error){console.error(error);status.textContent="Ошибка PDF: "+(error&&error.message?error.message:String(error));}
   finally{button.disabled=false;}
 }
 document.getElementById("brand").onclick=()=>{state.screen="home";render();};
