@@ -62,7 +62,7 @@ async function downloadPdf(){
   const button=document.getElementById("download"), status=document.getElementById("pdf-status");
   button.disabled=true;status.textContent="Формируем PDF…";
   try{
-    const modules=await Promise.all([import("../investment-start/assets/html2canvas-CMKDLtyc.js"),import("../investment-start/assets/jspdf.es.min-DcL3jvOaZ.js")]);
+    const modules=await Promise.all([import("../investment-start/assets/html2canvas-CMKDLtyc.js"),import("../investment-start/assets/jspdf.es.min-DcL3jvOa.js")]);
     const html2canvas=modules[0].default, jsPDF=modules[1].jsPDF;
     const canvas=await html2canvas(document.getElementById("pdf-content"),{scale:2,backgroundColor:"#ffffff",useCORS:true});
     const pdf=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
