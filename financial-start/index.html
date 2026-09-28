@@ -13,6 +13,89 @@
     <span class="privacy-dot"><i></i> Данные остаются на устройстве</span>
   </header>
   <main id="app"></main>
-  <script type="module" src="./app.js"></script>
+  <script type="module">\nconst questions = [{"title":"Финансовая подушка","text":"На сколько месяцев обязательных расходов вам хватит резерва, если основной доход временно прекратится?","options":["Подушки пока нет","Менее 3 месяцев","3–6 месяцев","Более 6 месяцев"],"actions":["Начните формировать отдельный резерв и постепенно доведите его до 3–6 месяцев обязательных расходов.","Доведите резерв как минимум до 3 месяцев обязательных расходов.","Поддерживайте резерв на уровне 3–6 месяцев и пересматривайте сумму при изменении расходов.","Проверьте, соответствует ли размер резерва вашим рискам и не хранится ли в нём избыточная сумма без отдельной цели."]},{"title":"Регулярность накоплений","text":"Какую часть дохода вы обычно откладываете каждый месяц?","options":["Пока не откладываю регулярно","До 10%","10–20%","Более 20%"],"actions":["Настройте автоматическое накопление посильной суммы сразу после получения дохода.","Закрепите регулярность и постепенно увеличивайте долю накоплений до комфортного уровня.","Сохраняйте регулярность и распределяйте накопления между конкретными целями.","Проверьте, что высокая доля накоплений не создаёт дефицита текущих денег и направляется на приоритетные цели."]},{"title":"Кредиты","text":"Как кредиты и другие заемные обязательства влияют на ваш бюджет?","options":["Есть просрочки по платежам","Платежи заметно ограничивают бюджет","Есть кредиты, но платежи не мешают другим финансовым целям","Нет кредитов и займов"],"actions":["Сначала устраните просрочки и стабилизируйте платежи; инвестиционные действия отложите до решения этой задачи.","Составьте план снижения кредитной нагрузки и освободите больше денег для финансовых целей.","Продолжайте соблюдать график платежей и контролируйте, чтобы кредиты не начали ограничивать накопления.","Сохраняйте осторожность с новыми займами и направляйте свободный денежный поток на приоритетные цели."]},{"title":"Финансовые цели","text":"Насколько конкретно вы понимаете, для чего вам нужны накопления и инвестиции?","options":["Цели пока не определены","Есть желания, но без сумм и сроков","Есть 1–2 понятные цели, с суммами и сроками","Все цели имеют суммы, сроки и приоритеты"],"actions":["Соберите идеи и сначала выделите три финансовые цели, которые действительно важны сейчас.","Добавьте к желаниям ориентировочную стоимость, срок и приоритет.","Проверьте приоритеты целей и рассчитайте необходимый ежемесячный взнос.","Регулярно пересматривайте стоимость, сроки и приоритеты целей при изменении обстоятельств."]},{"title":"Как сегодня устроены мои инвестиции?","text":"Выберите вариант, который лучше всего описывает вашу ситуацию.","options":["Пока не инвестирую","Пробовал(а) покупать отдельные активы","Инвестирую, но нерегулярно","Есть инвестиционная стратегия и правила покупок"],"actions":["Сначала укрепите финансовую базу, определите цели и изучите основные классы инструментов.","Замените отдельные спонтанные покупки простыми правилами: цель, срок, допустимый риск и регулярность.","Зафиксируйте инвестиционный план и настройте регулярное выполнение выбранной стратегии.","Периодически проверяйте стратегию, распределение активов и соответствие портфеля целям."]},{"title":"Отношение к инвестиционному риску","text":"Насколько осознанно вы учитываете возможность временных потерь и колебаний стоимости?","options":["Пока об этом не думал(а)","В основном смотрю на потенциальную доходность","Понимаю, какие колебания готов(а) выдержать","Риск-профиль определен и учтен в инвестиционной стратегии"],"actions":["Определите, как вы реагируете на временное снижение стоимости и какие потери для вас неприемлемы.","Оценивайте не только потенциальную доходность, но и возможную просадку, срок восстановления и риск потери денег.","Свяжите свою терпимость к риску со сроком каждой цели и правилами выбора инструментов.","Периодически пересматривайте риск-профиль и проверяйте, соответствует ли ему фактическая структура инвестиций."]},{"title":"Картина моих денег и активов","text":"Насколько хорошо вы понимаете, где находятся ваши накопления, инвестиции и другие значимые активы?","options":["Полной картины пока нет","Знаю основные накопления, но не веду общий учет","Веду список и знаю примерную стоимость активов","Регулярно смотрю на весь капитал и его структуру"],"actions":["Составьте единый список накоплений, инвестиций, недвижимости и других значимых активов.","Соберите основные активы в одной таблице и зафиксируйте их примерную стоимость.","Регулярно обновляйте список и отмечайте ликвидность и роль каждого актива в вашем плане.","Продолжайте регулярно оценивать структуру капитала и проверяйте избыточную концентрацию."]},{"title":"Защита семьи от крупных финансовых рисков","text":"Речь о серьезной болезни или травме, длительной потере дохода, смерти основного кормильца, повреждении или утрате жилья и другого значимого имущества.","options":["Эту тему пока не оценивал(а)","Есть отдельные решения, но общей картины нет","Основные риски частично закрыты","Есть комплексная система защиты ключевых рисков"],"actions":["Определите ключевые риски семьи и оцените, какие из них могут создать серьёзные финансовые последствия.","Соберите действующие решения в одну картину и найдите риски, которые пока не закрыты.","Проверьте достаточность страховых сумм, исключения и оставшиеся пробелы в защите.","Пересматривайте систему защиты при изменении доходов, состава семьи, имущества и обязательств."]}];
+const levels = [{"min":0,"max":7,"name":"Финансовый фундамент","headline":"Перед инвестициями важно укрепить финансовую базу.","text":"Подушка, долговая нагрузка или регулярность накоплений пока требуют внимания.","focus":["Создать или укрепить подушку","Разобраться с кредитами, если они ограничивают бюджет","Сделать накопления регулярными"]},{"min":8,"max":15,"name":"Подготовка к инвестированию","headline":"Финансовая база уже частично сформирована, но инвестиционный план еще не сложился.","text":"Следующий шаг — определить цели, сроки и ориентир по риску, прежде чем выбирать инструменты.","focus":["Выбрать 3 приоритетные цели","Определить суммы и сроки","Оценить терпимость к риску и изучить базовые классы активов"]},{"min":16,"max":20,"name":"Построение инвестиционной системы","headline":"Основные элементы уже есть.","text":"Теперь важно связать цели, сроки, риск и инструменты в единый план и инвестировать по понятным правилам.","focus":["Определить подход к целям","Настроить регулярное инвестирование","Проверить распределение денег между разными классами активов"]},{"min":21,"max":24,"name":"Оптимизация капитала","headline":"Базовая инвестиционная система уже сформирована.","text":"Следующий этап — проверить, насколько разумно распределен капитал и нет ли избыточной концентрации рисков.","focus":["Проверить структуру капитала","Найти избыточную концентрацию в отдельных активах","Проверить распределение капитала и его защиту"]}];
+const priorityOrder = [[2,0,1,3,7,5,4,6],[2,0,3,1,5,4,7,6],[4,3,5,6,1,7,0,2],[6,4,7,5,3,1,0,2]];
+const storageKey = "financial-start-v1";
+const appEl = document.getElementById("app");
+let state = { screen:"home", step:0, answers:Array(8).fill(-1) };
+
+function loadState(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(storageKey)||"{}");
+    if(Array.isArray(saved.answers)&&saved.answers.length===8) state.answers=saved.answers;
+  }catch(e){}
+}
+function saveState(){localStorage.setItem(storageKey,JSON.stringify({answers:state.answers}));}
+function score(){return state.answers.reduce((sum,value)=>sum+Math.max(0,value),0);}
+function levelFor(total){return levels.find(level=>total>=level.min&&total<=level.max)||levels[0];}
+function priorityIndexes(total){
+  const result=[];
+  const add=i=>{if(!result.includes(i)) result.push(i);};
+  if(state.answers[2]===0) add(2);
+  if(state.answers[0]===0) add(0);
+  if(state.answers[2]===1) add(2);
+  if(state.answers[0]===1) add(0);
+  if(state.answers[1]===0) add(1);
+  const tier=total<=7?0:total<=15?1:total<=20?2:3;
+  priorityOrder[tier].slice().sort((a,b)=>state.answers[a]-state.answers[b]||priorityOrder[tier].indexOf(a)-priorityOrder[tier].indexOf(b)).forEach(add);
+  return result.slice(0,3);
+}
+function stopMessage(){
+  const overdue=state.answers[2]===0;
+  const noReserve=state.answers[0]===0;
+  if(overdue&&noReserve) return "Есть два предварительных действия: устранить просрочки по кредитам и затем сформировать финансовую подушку.";
+  if(overdue) return "Есть просрочки по кредитам. До выбора инвестиционных инструментов сначала стабилизируйте обязательные платежи.";
+  if(noReserve) return "Финансовой подушки пока нет. До выбора инвестиционных инструментов сначала сформируйте резерв.";
+  return "";
+}
+function render(){
+  if(state.screen==="home") return renderHome();
+  if(state.screen==="question") return renderQuestion();
+  return renderResult();
+}
+function renderHome(){
+  const hasProgress=state.answers.some(v=>v>=0);
+  appEl.innerHTML='<section class="screen hero"><div class="hero-copy"><p class="eyebrow">Короткая самостоятельная диагностика</p><h1>Моя финансовая стартовая точка</h1><p class="lead">Ответьте на восемь вопросов и получите ориентир: что уже сформировано и на чём стоит сфокусироваться дальше.</p><button class="primary" id="start">'+(hasProgress?"Продолжить диагностику →":"Определить стартовую точку →")+'</button><div class="local-note"><b>Без регистрации и передачи данных.</b><br>Ответы сохраняются только в браузере этого устройства.</div></div><aside class="hero-card"><h2>Что вы получите</h2><ol><li>Расчётный уровень финансовой готовности.</li><li>Предварительные действия, если они нужны.</li><li>Три персональных приоритета.</li><li>Результат, который можно скачать в PDF.</li></ol></aside></section>';
+  document.getElementById("start").onclick=()=>{const first=state.answers.findIndex(v=>v<0);state.step=first<0?0:first;state.screen="question";render();};
+}
+function renderQuestion(){
+  const q=questions[state.step], selected=state.answers[state.step];
+  appEl.innerHTML='<section class="screen"><div class="progress-card"><div class="progress-top"><span>Вопрос '+(state.step+1)+' из '+questions.length+'</span><b>'+Math.round((state.step+1)/questions.length*100)+'%</b></div><div class="progress"><span style="width:'+((state.step+1)/questions.length*100)+'%"></span></div></div><div class="question-card"><p class="eyebrow">Стартовая точка</p><h1>'+q.title+'</h1><p class="question-text">'+q.text+'</p><div class="options">'+q.options.map((option,i)=>'<button class="option '+(selected===i?"selected":"")+'" data-value="'+i+'">'+option+'</button>').join("")+'</div><p class="error" id="error" hidden>Выберите вариант ответа.</p><div class="actions"><button class="secondary" id="back">'+(state.step===0?"← На главную":"← Назад")+'</button><button class="primary" id="next">'+(state.step===questions.length-1?"Показать результат →":"Далее →")+'</button></div></div></section>';
+  document.querySelectorAll(".option").forEach(btn=>btn.onclick=()=>{state.answers[state.step]=Number(btn.dataset.value);saveState();renderQuestion();});
+  document.getElementById("back").onclick=()=>{if(state.step===0){state.screen="home";}else state.step--;render();};
+  document.getElementById("next").onclick=()=>{if(state.answers[state.step]<0){document.getElementById("error").hidden=false;return;}if(state.step<questions.length-1){state.step++;render();}else{state.screen="result";render();}};
+}
+function renderResult(){
+  if(state.answers.some(v=>v<0)){state.screen="question";state.step=state.answers.findIndex(v=>v<0);return render();}
+  const total=score(), level=levelFor(total), priorities=priorityIndexes(total), stop=stopMessage();
+  appEl.innerHTML='<section class="screen"><article class="result-card" id="pdf-content"><div class="result-head"><p class="eyebrow">Результат диагностики</p><span class="score">'+total+' из 24 баллов</span><h1>'+level.name+'</h1><p class="headline">'+level.headline+'</p><p class="result-copy">'+level.text+'</p></div>'+(stop?'<div class="stop"><strong>Сделать до начала инвестирования</strong><p>'+stop+'</p></div>':'')+'<h2 class="section-title">Три приоритета сейчас</h2><div class="priorities">'+priorities.map((index,n)=>'<div class="priority"><b>'+(n+1)+'</b><div><strong>'+questions[index].title+'</strong><p>'+questions[index].actions[state.answers[index]]+'</p></div></div>').join("")+'</div><h2 class="section-title">Ориентир для следующего этапа</h2><ul class="focus-list">'+level.focus.map(item=>'<li>'+item+'</li>').join("")+'</ul><p class="disclaimer">Диагностика носит образовательный характер, не является индивидуальной инвестиционной рекомендацией или профессиональным финансовым консультированием.</p></article><div class="result-actions"><button class="primary" id="download">Скачать результат в PDF</button><a class="secondary full-link" target="_blank" rel="noopener noreferrer" href="../investment-start/">Перейти в полный навигатор ↗</a><button class="secondary" id="restart">Пройти заново</button></div><p class="pdf-status" id="pdf-status"></p></section>';
+  document.getElementById("restart").onclick=()=>{if(confirm("Начать диагностику заново? Сохранённые ответы будут удалены.")){state={screen:"question",step:0,answers:Array(8).fill(-1)};localStorage.removeItem(storageKey);render();}};
+  document.getElementById("download").onclick=downloadPdf;
+}
+async function downloadPdf(){
+  const button=document.getElementById("download"), status=document.getElementById("pdf-status");
+  button.disabled=true;status.textContent="Формируем PDF…";
+  try{
+    const modules=await Promise.all([import("../investment-start/assets/html2canvas-CMKDLtyc.js"),import("../investment-start/assets/jspdf.es.min-DcL3jvOa.js")]);
+    const html2canvas=modules[0].default, jsPDF=modules[1].jsPDF;
+    const canvas=await html2canvas(document.getElementById("pdf-content"),{scale:2,backgroundColor:"#ffffff",useCORS:true});
+    const pdf=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
+    const pageW=210,pageH=297,margin=10,contentW=pageW-margin*2,contentH=pageH-margin*2;
+    const imgH=canvas.height*contentW/canvas.width;
+    let position=margin, remaining=imgH;
+    const image=canvas.toDataURL("image/jpeg",0.95);
+    pdf.addImage(image,"JPEG",margin,position,contentW,imgH);
+    remaining-=contentH;
+    while(remaining>0){position=margin-(imgH-remaining);pdf.addPage();pdf.addImage(image,"JPEG",margin,position,contentW,imgH);remaining-=contentH;}
+    const date=new Date().toLocaleDateString("ru-RU").replaceAll(".","-");
+    pdf.save("Моя_финансовая_стартовая_точка_"+date+".pdf");
+    status.textContent="PDF скачан на устройство.";
+  }catch(error){console.error(error);status.textContent="Не удалось создать PDF. Обновите страницу и попробуйте ещё раз.";}
+  finally{button.disabled=false;}
+}
+document.getElementById("brand").onclick=()=>{state.screen="home";render();};
+loadState();
+render();\n  </script>
 </body>
 </html>
